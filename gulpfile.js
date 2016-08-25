@@ -8,6 +8,7 @@ var config = require('./gulp/config.json'),
     sorting = require('postcss-sorting'),
     atImport = require('postcss-import'),
     precss = require('precss'),
+    lost = require('lost'),
     gulpStylelint = require('gulp-stylelint'),
     calc = require('postcss-calc'),
     simpleVars = require('postcss-simple-vars'),
@@ -39,6 +40,7 @@ gulp.task('sort-css', function () {
 gulp.task('css', ['lint-css', 'sort-css'], function () {
   var processors = [
     atImport(),
+    lost(),
     precss(),
     map({ basePath: files.paths.maps, maps: files.globs.maps }),
     postcssnested(),

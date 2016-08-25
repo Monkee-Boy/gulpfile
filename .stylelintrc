@@ -100,7 +100,6 @@
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "property-case": "lower",
-    "property-no-unknown": true,
     "property-no-vendor-prefix": true,
     "root-no-standard-properties": true,
     "rule-nested-empty-line-before": [ "always-multi-line", {
