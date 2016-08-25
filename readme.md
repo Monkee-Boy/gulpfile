@@ -1,4 +1,4 @@
-![Monkee-Boy](https://dujrsrsgsd3nh.cloudfront.net/img/emoticons/113009/mboy-1403710932.jpg) gulpfile-template
+![Monkee-Boy](https://dujrsrsgsd3nh.cloudfront.net/img/emoticons/113009/mboy-1403710932.jpg) gulpfile-template [![GitHub version](https://badge.fury.io/gh/Monkee-Boy%2Fgulpfile.svg)](https://badge.fury.io/gh/Monkee-Boy%2Fgulpfile)
 ==============
 
 `gulpfile-template` makes it easy for you to get started on new projects. Yeoman generator coming soon!
