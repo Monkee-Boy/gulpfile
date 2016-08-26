@@ -8,6 +8,26 @@ body {
   background: map(colors, blue, base);
 }
 
+@media <=1024px >768px {
+  .test-mq {
+    font-size: 15px;
+  }
+}
+
+@media <=map(bp, desktop) >map(bp, mobile) {
+  .test-mq-b {
+    font-size: 12px;
+  }
+}
+
+.test-mq-c {
+  font-size: 12px;
+
+  @media <=map(bp, desktop) >map(bp, mobile) {
+    font-size: 14px;
+  }
+}
+
 .row {
   lost-utility: clearfix;
 }
@@ -38,7 +58,7 @@ body {
   }
 }
 
-@define-mixin size $width, $height {
+@define-mixin size $width, $height: 300px {
   width: $width;
   height: $height;
 }

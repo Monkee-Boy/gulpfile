@@ -26,6 +26,7 @@
     "jshint-stylish": "^2.2.1",
     "lost": "^7.0.4",
     "postcss-calc": "^5.3.1",
+    "postcss-compact-mq": "^0.2.1",
     "postcss-conditionals": "^2.0.2",
     "postcss-each": "^0.9.3",
     "postcss-for": "^2.1.1",

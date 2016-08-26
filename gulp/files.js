@@ -29,7 +29,7 @@ var globs = {
   ],
   maps: [
     'config.yml',
-    'breakpoints.yml',
+    'bp.yml',
     'colors.yml',
     'icons.yml',
     'fonts.yml'

@@ -12,6 +12,7 @@ var config = require('./gulp/config.json'),
     conditionals = require('postcss-conditionals'),
     postcssfor = require('postcss-for'),
     postcsseach = require('postcss-each'),
+    compactmq = require('postcss-compact-mq'),
     gulpStylelint = require('gulp-stylelint'),
     calc = require('postcss-calc'),
     simpleVars = require('postcss-simple-vars'),
@@ -42,13 +43,14 @@ gulp.task('sort-css', function () {
 
 gulp.task('css', ['lint-css', 'sort-css'], function () {
   var processors = [
+    map({ basePath: files.paths.maps, maps: files.globs.maps }),
     atImport(),
     conditionals(),
     postcssfor(),
     postcsseach(),
     mixins(),
     lost(),
-    map({ basePath: files.paths.maps, maps: files.globs.maps }),
+    compactmq(),
     nested(),
     calc(),
     simpleVars(),
