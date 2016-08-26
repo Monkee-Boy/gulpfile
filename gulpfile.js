@@ -13,7 +13,7 @@ var config = require('./gulp/config.json'),
     postcssfor = require('postcss-for'),
     postcsseach = require('postcss-each'),
     compactmq = require('postcss-compact-mq'),
-    gulpStylelint = require('gulp-stylelint'),
+    stylelint = require('gulp-stylelint'),
     calc = require('postcss-calc'),
     simpleVars = require('postcss-simple-vars'),
     nested = require('postcss-nested'),
@@ -30,7 +30,7 @@ gulp.task('default', ['css', 'js']);
 gulp.task('lint-css', function () {
   return gulp.src(files.globs.css_raw)
     .pipe(sourcemaps.init())
-    .pipe(gulpStylelint(config.stylelint));
+    .pipe(stylelint(config.stylelint));
 });
 
 gulp.task('sort-css', function () {
