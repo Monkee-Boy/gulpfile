@@ -1,3 +1,4 @@
+@import "../../bower_components/normalize-css/normalize.css";
 @import "typography.css";
 @import "forms.css";
 @import "blog.css";

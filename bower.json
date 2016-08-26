@@ -1,0 +1,20 @@
+{
+  "name": "gulpfile-template",
+  "description": "Gulp template for starting Monkee-Boy projects.",
+  "authors": [
+    "James Fleeting"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Monkee-Boy/gulpfile",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.2.0"
+  }
+}
