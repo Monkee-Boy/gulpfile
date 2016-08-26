@@ -15,3 +15,38 @@ body {
 .column {
   lost-column: 1/4;
 }
+
+.conditional-test {
+  @if 7 < 5 {
+    background: green;
+  }
+
+  @else {
+    background: blue;
+  }
+}
+
+@for $i from 1 to 3 {
+  .for-test-$i {
+    width: $(i)px;
+  }
+}
+
+@each $icon in foo, bar, baz {
+  .each-test-icon-$(icon) {
+    background: url("icons/$(icon).png");
+  }
+}
+
+@define-mixin size $width, $height {
+  width: $width;
+  height: $height;
+}
+
+.mixin-test {
+  @mixin size 400px, 25px;
+}
+
+.mixin-test-b {
+  @mixin size 300px;
+}
