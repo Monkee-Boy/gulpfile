@@ -12,6 +12,7 @@
   "author": "James Fleeting",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^6.4.1",
     "cssnano": "^3.7.4",
     "cssstats": "^3.0.0-beta.2",
     "gulp": "^3.9.1",
