@@ -5,6 +5,7 @@ var paths = {
   },
   js: {
     src: './js/src/',
+    vendor: './js/vendor/',
     dist: './js/'
   },
   jshint: './',
