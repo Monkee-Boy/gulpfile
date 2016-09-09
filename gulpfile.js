@@ -43,8 +43,8 @@ gulp.task('sort-css', function () {
 
 gulp.task('css', ['lint-css', 'sort-css'], function () {
   var processors = [
-    map({ basePath: files.paths.maps, maps: files.globs.maps }),
     atImport(),
+    map({ basePath: files.paths.maps, maps: files.globs.maps }),
     conditionals(),
     postcssfor(),
     postcsseach(),
