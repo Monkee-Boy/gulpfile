@@ -3,5 +3,6 @@
 	"sub": true,
 	"undef": true,
 	"eqeqeq": true,
-	"strict": true
+	"strict": true,
+	"esversion": 6
 }

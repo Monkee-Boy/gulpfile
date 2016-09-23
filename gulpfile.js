@@ -24,14 +24,15 @@ var config = require('./gulp/config.json'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     sizereport = require('gulp-sizereport'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    babel = require('gulp-babel');
 
 gulp.task('default', ['images', 'css', 'js']);
 
 gulp.task('images', function () {
   return gulp.src(files.globs.images.src)
     .pipe(imagemin())
-    .pipe(gulp.dest(files.paths.images.dist))
+    .pipe(gulp.dest(files.paths.images.dist));
 });
 
 gulp.task('lint-css', function () {
@@ -81,10 +82,13 @@ gulp.task('lint-js', function() {
 
 gulp.task('js', ['lint-js'], function() {
   return gulp.src(files.globs.js)
+    .pipe(sourcemaps.init())
+    .pipe(babel({presets: ['es2015']}))
     .pipe(concat(files.globs.js_dist.original))
     .pipe(gulp.dest(files.paths.js.dist))
     .pipe(rename(files.globs.js_dist.minified))
     .pipe(uglify(config.uglify))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(files.paths.js.dist))
     .pipe(sizereport());
 });

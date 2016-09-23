@@ -13,6 +13,7 @@ gulp plugins include:
 * [gulp-stylelint](https://www.npmjs.com/package/gulp-stylelint/)
 * [gulp-uglify](https://www.npmjs.com/package/gulp-uglify/)
 * [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin)
+* [gulp-babel](https://github.com/babel/gulp-babel)
 
 npm packages include:
 * [jshint](https://www.npmjs.com/package/jshint)
