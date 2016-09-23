@@ -83,7 +83,7 @@ gulp.task('lint-js', function() {
 gulp.task('js', ['lint-js'], function() {
   return gulp.src(files.globs.js)
     .pipe(sourcemaps.init())
-    .pipe(babel({presets: ['es2015']}))
+    .pipe(babel(config.babel))
     .pipe(concat(files.globs.js_dist.original))
     .pipe(gulp.dest(files.paths.js.dist))
     .pipe(rename(files.globs.js_dist.minified))
