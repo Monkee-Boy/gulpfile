@@ -1,5 +1,5 @@
-/css/style.css
+/css/*.css
 /css/style.css.map
-/js/app.js
-/js/app.min.js
+/js/*.js
+/images/*.*
 /bower_components

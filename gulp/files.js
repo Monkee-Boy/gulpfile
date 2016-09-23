@@ -8,6 +8,10 @@ var paths = {
     vendor: './js/vendor/',
     dist: './js/'
   },
+  images: {
+    src: './images/src/',
+    dist: './images/'
+  },
   jshint: './',
   maps: './css/src/maps/'
 }
@@ -34,7 +38,11 @@ var globs = {
     'colors.yml',
     'icons.yml',
     'fonts.yml'
-  ]
+  ],
+  images: {
+    src: paths.images.src + '*.*',
+    dist: paths.images.dist + '*.*'
+  }
 };
 
 module.exports = {

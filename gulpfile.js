@@ -23,9 +23,16 @@ var config = require('./gulp/config.json'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    sizereport = require('gulp-sizereport');
+    sizereport = require('gulp-sizereport'),
+    imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', ['images', 'css', 'js']);
+
+gulp.task('images', function () {
+  return gulp.src(files.globs.images.src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(files.paths.images.dist))
+});
 
 gulp.task('lint-css', function () {
   return gulp.src(files.globs.css_raw)
