@@ -4,8 +4,7 @@ var paths = {
   },
   css: {
     src: './css/src/',
-    dist: './css/dist/',
-    maps: './css/src/maps/'
+    dist: './css/dist/'
   },
   js: {
     src: './js/src/',
@@ -22,7 +21,6 @@ var paths = {
 var globs = {
   js: {
     src: [
-      paths.js.src + 'map.js',
       paths.js.src + 'main.js'
     ],
     dist: {
@@ -43,13 +41,6 @@ var globs = {
       minified: 'style.min.css',
       temp: 'style.temp.css'
     },
-    maps: [
-      'config.yml',
-      'bp.yml',
-      'colors.yml',
-      'icons.yml',
-      'fonts.yml'
-    ],
     normalize: paths.bower_components.normalizecss + 'normalize.css'
   },
   images: {
