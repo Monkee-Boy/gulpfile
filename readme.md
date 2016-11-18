@@ -3,6 +3,8 @@
 
 `gulpfile-template` makes it easy for you to get started on new projects using [Gulp](http://gulpjs.com/) and [PostCSS](https://github.com/postcss/postcss). Yeoman generator coming soon!
 
+> Just run `yarn`.
+
 gulp plugins include:
 * [gulp-concat](https://www.npmjs.com/package/gulp-concat/)
 * [gulp-jshint](https://www.npmjs.com/package/gulp-jshint/)

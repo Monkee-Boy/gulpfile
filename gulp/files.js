@@ -22,7 +22,6 @@ var paths = {
 var globs = {
   js: {
     src: [
-      paths.js.src + 'map.js',
       paths.js.src + 'main.js'
     ],
     dist: {
