@@ -10,7 +10,6 @@ Check `postcss` branch for a version with PostCSS plugins.
 gulp plugins include:
 * [gulp-concat](https://www.npmjs.com/package/gulp-concat/)
 * [gulp-jshint](https://www.npmjs.com/package/gulp-jshint/)
-* [gulp-postcss](https://github.com/postcss/gulp-postcss)
 * [gulp-rename](https://www.npmjs.com/package/gulp-rename/)
 * [gulp-sizereport](https://www.npmjs.com/package/gulp-sizereport/)
 * [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps/)
