@@ -1,5 +1,5 @@
-/css/*.css
-/css/style.css.map
-/js/*.js
-/images/*.*
+/css/dist
+/js/dist
+/images/dist
 /bower_components
+/node_modules

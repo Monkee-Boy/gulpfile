@@ -7,7 +7,8 @@
     "url": "git@github.com:Monkee-Boy/gulpfile.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install && gulp"
   },
   "author": "James Fleeting",
   "license": "MIT",
@@ -24,7 +25,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
     "gulp-sizereport": "^1.2.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.2.0",
     "gulp-stylelint": "^3.1.0",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.3",

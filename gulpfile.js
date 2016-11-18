@@ -36,14 +36,14 @@ gulp.task('images', function () {
 });
 
 gulp.task('lint-css', function () {
-  return gulp.src(files.globs.css_raw)
+  return gulp.src(files.globs.css.raw)
     .pipe(sourcemaps.init())
     .pipe(stylelint(config.stylelint));
 });
 
 gulp.task('sort-css', function () {
   /* Having some issues with nested rules - removing for now. */
-  // return gulp.src(files.globs.css_raw)
+  // return gulp.src(files.globs.css.raw)
   //   .pipe(postcss([sorting(config.sorting)]))
   //   .pipe(gulp.dest(files.paths.css.src));
   return;
@@ -52,7 +52,7 @@ gulp.task('sort-css', function () {
 gulp.task('css', ['lint-css', 'sort-css'], function () {
   var processors = [
     atImport(),
-    map({ basePath: files.paths.maps, maps: files.globs.maps }),
+    map({ basePath: files.paths.css.maps, maps: files.globs.css.maps }),
     conditionals(),
     postcssfor(),
     postcsseach(),
@@ -66,7 +66,7 @@ gulp.task('css', ['lint-css', 'sort-css'], function () {
     cssnano()
   ];
 
-  return gulp.src(files.globs.css)
+  return gulp.src(files.globs.css.src)
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(sourcemaps.write('.'))
@@ -75,18 +75,18 @@ gulp.task('css', ['lint-css', 'sort-css'], function () {
 });
 
 gulp.task('lint-js', function() {
-  return gulp.src(files.globs.js)
-    .pipe(jshint(files.paths.jshint + files.globs.jshint))
+  return gulp.src(files.globs.js.src)
+    .pipe(jshint(files.paths.js.jshint + files.globs.js.jshint))
     .pipe(jshint.reporter(config.jshint_reporter));
 });
 
 gulp.task('js', ['lint-js'], function() {
-  return gulp.src(files.globs.js)
+  return gulp.src(files.globs.js.src)
     .pipe(sourcemaps.init())
     .pipe(babel(config.babel))
-    .pipe(concat(files.globs.js_dist.original))
+    .pipe(concat(files.globs.js.dist.original))
     .pipe(gulp.dest(files.paths.js.dist))
-    .pipe(rename(files.globs.js_dist.minified))
+    .pipe(rename(files.globs.js.dist.minified))
     .pipe(uglify(config.uglify))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(files.paths.js.dist))
