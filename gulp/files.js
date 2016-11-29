@@ -52,7 +52,7 @@ var globs = {
     normalize: paths.bower_components.normalizecss + 'normalize.css'
   },
   images: {
-    src: paths.images.src + '*.*',
+    src: paths.images.src + '**',
     dist: paths.images.dist + '*.*'
   }
 };
