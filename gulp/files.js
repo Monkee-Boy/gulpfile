@@ -1,6 +1,6 @@
 var paths = {
-  bower_components: {
-    normalizecss: './bower_components/normalize-css/'
+  components: {
+    babelpolyfill: './node_modules/babel-polyfill/dist/'
   },
   css: {
     src: './css/src/',
@@ -22,6 +22,7 @@ var paths = {
 var globs = {
   js: {
     src: [
+      paths.components.babelpolyfill + 'polyfill.js',
       paths.js.src + 'main.js'
     ],
     dist: {
@@ -46,10 +47,8 @@ var globs = {
       'config.yml',
       'bp.yml',
       'colors.yml',
-      'icons.yml',
       'fonts.yml'
-    ],
-    normalize: paths.bower_components.normalizecss + 'normalize.css'
+    ]
   },
   images: {
     src: paths.images.src + '**',

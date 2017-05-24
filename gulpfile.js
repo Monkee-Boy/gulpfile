@@ -5,10 +5,8 @@ var config = require('./gulp/config.json'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
-    sorting = require('postcss-sorting'),
     atImport = require('postcss-import'),
     mixins = require('postcss-mixins'),
-    lost = require('lost'),
     conditionals = require('postcss-conditionals'),
     postcssfor = require('postcss-for'),
     postcsseach = require('postcss-each'),
@@ -25,7 +23,8 @@ var config = require('./gulp/config.json'),
     concat = require('gulp-concat'),
     sizereport = require('gulp-sizereport'),
     imagemin = require('gulp-imagemin'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    pump = require('pump');
 
 gulp.task('default', ['images', 'css', 'js']);
 
@@ -41,14 +40,6 @@ gulp.task('lint-css', function () {
     .pipe(stylelint(config.stylelint));
 });
 
-gulp.task('sort-css', function () {
-  /* Having some issues with nested rules - removing for now. */
-  // return gulp.src(files.globs.css.raw)
-  //   .pipe(postcss([sorting(config.sorting)]))
-  //   .pipe(gulp.dest(files.paths.css.src));
-  return;
-});
-
 gulp.task('css', ['lint-css', 'sort-css'], function () {
   var processors = [
     atImport(),
@@ -57,7 +48,6 @@ gulp.task('css', ['lint-css', 'sort-css'], function () {
     postcssfor(),
     postcsseach(),
     mixins(),
-    lost(),
     compactmq(),
     nested(),
     calc(),
@@ -87,7 +77,7 @@ gulp.task('js', ['lint-js'], function() {
     .pipe(concat(files.globs.js.dist.original))
     .pipe(gulp.dest(files.paths.js.dist))
     .pipe(rename(files.globs.js.dist.minified))
-    .pipe(uglify(config.uglify))
+    .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(files.paths.js.dist))
     .pipe(sizereport());
